@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using YoutubeExplode;
 using YoutubeExplode.Models.MediaStreams;
+using Newtonsoft.Json;
 
 namespace Reproductor
 {
@@ -72,7 +73,8 @@ namespace Reproductor
             //Se puede incluir un checkbox para indicar que de una vez se reproduzca el MP3
             //if (ckbAutoPlay.Checked) 
             //  ReproducirMP3(SaveMP3File);
-            Listas_Publicas.Biblioteca.Add(biblioteca);
+            GuardarJson(biblioteca);
+            //Listas_Publicas.Biblioteca.Add(biblioteca);
             return;
         }
 
@@ -88,6 +90,19 @@ namespace Reproductor
         {
             Inicio frm = new Inicio();
             frm.ShowDialog();
+        }
+
+        private void GuardarJson(CL_Biblioteca p)
+        {
+            string salida = JsonConvert.SerializeObject(p);
+            FileStream stream = new FileStream("Biblioteca.json", FileMode.Append, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            writer.WriteLine(salida);
+            writer.Close();
+            //limpiar la lista de autores
+
+            MessageBox.Show("Ingresado Exitosamente!!");
+
         }
     }
 }
