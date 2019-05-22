@@ -27,6 +27,7 @@ namespace Reproductor
 
         private async Task MainAsync()
         {
+            CL_Biblioteca biblioteca = new CL_Biblioteca();
             //Nuevo Cliente de YouTube
             var client = new YoutubeClient();
             //Lee la URL de youtube que le escribimos en el textbox.
@@ -52,6 +53,8 @@ namespace Reproductor
             var Convert = new NReco.VideoConverter.FFMpegConverter();
             //Especificar la carpeta donde se van a guardar los archivos, recordar la \ del final
             String SaveMP3File = @"C:\Users\Patrick\Documents\Visual Studio 2015\Projects\Reproductor\MP3\" + fileName.Replace(".mp4", ".mp3");
+            biblioteca.Direccion = SaveMP3File;
+            biblioteca.Nombre = fileName;
             //Guarda el archivo convertido en la ubicación indicada
             Convert.ConvertMedia(fileName, SaveMP3File, "mp3");
             //Si el checkbox de solo audio está chequeado, borrar el mp4 despues de la conversión
@@ -69,6 +72,7 @@ namespace Reproductor
             //Se puede incluir un checkbox para indicar que de una vez se reproduzca el MP3
             //if (ckbAutoPlay.Checked) 
             //  ReproducirMP3(SaveMP3File);
+            Listas_Publicas.Biblioteca.Add(biblioteca);
             return;
         }
 
@@ -80,5 +84,10 @@ namespace Reproductor
                 : input;
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Inicio frm = new Inicio();
+            frm.ShowDialog();
+        }
     }
 }
