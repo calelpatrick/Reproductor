@@ -52,6 +52,7 @@ namespace Reproductor
             string cadena = dataGridView2.CurrentRow.Cells[2].Value.ToString();
             WR.URL = cadena;
             WR.Ctlcontrols.play();
+            //que putas
         }
     }
 }
