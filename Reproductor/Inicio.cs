@@ -15,6 +15,7 @@ namespace Reproductor
 {
     public partial class Inicio : Form
     {
+        List<CL_Biblioteca> A = new List<CL_Biblioteca>();
         public Inicio()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace Reproductor
 
         private void LeerJsonL()
         {
-            List<CL_Biblioteca> A = new List<CL_Biblioteca>();
+            //List<CL_Biblioteca> A = new List<CL_Biblioteca>();
             FileStream stream = new FileStream("Biblioteca.json", FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
             while (reader.Peek() > -1)
@@ -49,10 +50,15 @@ namespace Reproductor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string cadena = dataGridView2.CurrentRow.Cells[2].Value.ToString();
-            WR.URL = cadena;
-            WR.Ctlcontrols.play();
-            //que putas
+            for (int i = 0; i < A.Count ; i++)
+            {
+                string cadena = dataGridView2.CurrentRow.Cells[2].Value.ToString();
+                WR.URL = cadena;
+                WR.Ctlcontrols.play();
+
+            }
+
+            
         }
     }
 }

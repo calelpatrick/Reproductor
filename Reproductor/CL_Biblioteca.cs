@@ -13,6 +13,7 @@ namespace Reproductor
         string nombre;
         string direccion;
         string portada;
+        string letra;
 
         public int Codigo
         {
@@ -63,6 +64,19 @@ namespace Reproductor
             set
             {
                 portada = value;
+            }
+        }
+
+        public string Letra
+        {
+            get
+            {
+                return letra;
+            }
+
+            set
+            {
+                letra = value;
             }
         }
     }

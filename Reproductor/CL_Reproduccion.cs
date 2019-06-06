@@ -8,9 +8,24 @@ namespace Reproductor
 {
    public class CL_Reproduccion
     {
+        string codigo;
         string nombre;
         string direccion;
-        string portada;
+
+        
+
+        public string Codigo
+        {
+            get
+            {
+                return codigo;
+            }
+
+            set
+            {
+                codigo = value;
+            }
+        }
 
         public string Nombre
         {
@@ -37,18 +52,7 @@ namespace Reproductor
                 direccion = value;
             }
         }
-
-        public string Portada
-        {
-            get
-            {
-                return portada;
-            }
-
-            set
-            {
-                portada = value;
-            }
-        }
     }
+
+
 }
