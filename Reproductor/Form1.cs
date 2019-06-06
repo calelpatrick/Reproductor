@@ -37,28 +37,25 @@ namespace Reproductor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != null)
+            if (metroTextBox1.Text == "")
             {
-                if (metroTextBox1.Text!=null)
+                MessageBox.Show("ingrese Link del Video");
+            }
+            else
+            {
+                if (textBox1.Text == "")
                 {
-
+                    MessageBox.Show("ingrese la letra");
+                }
+                else
+                {
                     metroLabel1.Text = "Iniciando...";
                     progres += 10;
                     metroProgressBar1.Value = progres;
                     portada();
                     letra();
                     MainAsync();
-
                 }
-                else
-                {
-                    MessageBox.Show("ingrese Link del Video");
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("ingrese la letra");
             }
         }
 
@@ -115,7 +112,8 @@ namespace Reproductor
             GuardarJson(biblioteca);
             MessageBox.Show("Vídeo convertido correctamente.");
             metroLabel1.Text = "";
-            metroLabel1.Text = "";
+            metroTextBox1.Text = "";
+            textBox1.Text = "";
             progres = 0;
             metroProgressBar1.Value = progres;
             return;

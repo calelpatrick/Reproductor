@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 using System.IO;
+using MetroFramework;
 
 namespace Reproductor
 {
-    public partial class Inicio : Form
+    public partial class Inicio : MetroFramework.Forms.MetroForm
     {
         List<CL_Biblioteca> A = new List<CL_Biblioteca>();
+        bool pausa = false;
         public Inicio()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace Reproductor
         private void Inicio_Load(object sender, EventArgs e)
         {
             LeerJsonL();
+            WR.uiMode = "none";
         }
 
         private void LeerJsonL()
@@ -44,21 +47,78 @@ namespace Reproductor
             }
             reader.Close();
             //Mostrar la lista de libros en el gridview
-            dataGridView2.DataSource = A;///Listas_Publicas.Biblioteca;
-            dataGridView2.Refresh();
+            dataGridView1.DataSource = A;///Listas_Publicas.Biblioteca;
+            dataGridView1.Refresh();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < A.Count ; i++)
-            {
-                string cadena = dataGridView2.CurrentRow.Cells[2].Value.ToString();
-                WR.URL = cadena;
-                WR.Ctlcontrols.play();
-
-            }
+          
 
             
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            double time = WR.Ctlcontrols.currentPosition;
+            
+            if (time > 0 && pausa == true)
+            {
+                WR.Ctlcontrols.currentPosition = time;
+                WR.Ctlcontrols.play();
+                pausa = false;
+            }
+            else
+            {
+
+                string ruta = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                string cancion = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                leerLetra(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                WR.URL = cancion;
+                Image f = Image.FromFile(ruta);
+                pictureBox1.Image = f;
+                WR.Ctlcontrols.play();
+            }
+
+        }
+        private void leerLetra(string path)
+        {
+            textBox1.Text = File.ReadAllText(path);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //WR.Ctlcontrols.stop();
+            if (pausa==true)
+            {
+                WR.Ctlcontrols.stop();
+                pausa = false;
+                string img = "C:\\Users\\Patrick\\Documents\\Visual Studio 2015\\Projects\\Reproductor\\Icon\\stop.png";
+                button4.Image = Image.FromFile(img);
+            }
+            else { 
+            pausa = true;
+                string img = "C:\\Users\\Patrick\\Documents\\Visual Studio 2015\\Projects\\Reproductor\\Icon\\pause.png";
+                button4.Image = Image.FromFile(img);
+                WR.Ctlcontrols.pause();
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            A.Clear();
+            LeerJsonL();
         }
     }
 }
