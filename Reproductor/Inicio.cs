@@ -34,6 +34,8 @@ namespace Reproductor
             WR.uiMode = "none";
         }
 
+      
+
         private void LeerJsonL()
         {
             //List<CL_Biblioteca> A = new List<CL_Biblioteca>();
@@ -125,11 +127,12 @@ namespace Reproductor
 
         private void button5_Click(object sender, EventArgs e)
         {
-            A.Clear();
-            dataGridView1.DataSource = null;
-            LeerJsonL();
-            //dataGridView1.DataSource = A;
-            //dataGridView1.Refresh();
+            string codigo = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string nombre = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            string direccion = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string portada = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            string letra = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+           // string nombre = dataGridView1.CurrentRow.Cells[1].Value.ToString();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -253,6 +256,10 @@ namespace Reproductor
             StreamWriter writer = new StreamWriter(stream);
             writer.WriteLine(salida);
             writer.Close();
+        }
+
+        private class RadTreeViewMouseEventArgs
+        {
         }
     }
 }
