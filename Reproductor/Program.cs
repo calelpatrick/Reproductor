@@ -16,7 +16,26 @@ namespace Reproductor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inicio());
+            //Inicio frm = new Inicio();
+            //frm.FormClosed += MainForm_Closed();
+            //frm.Show(); 
+            Application.Run( new Inicio());
+        }
+
+
+
+        private static void MainForm_Closed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)sender).FormClosed -= MainForm_Closed;
+
+            if (Application.OpenForms.Count == 0)
+            {
+                Application.ExitThread();
+            }
+            else
+            {
+                Application.OpenForms[0].FormClosed += MainForm_Closed;
+            }
         }
     }
 }

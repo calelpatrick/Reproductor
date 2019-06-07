@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.BtnDescargar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -44,9 +43,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 179);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Link";
             // 
@@ -60,16 +60,6 @@
             this.BtnDescargar.UseVisualStyleBackColor = true;
             this.BtnDescargar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(462, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(259, 83);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Principal";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -77,7 +67,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(62, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(62, 102);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -116,11 +106,11 @@
             this.metroTextBox1.CustomForeColor = false;
             this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Small;
             this.metroTextBox1.FontWeight = MetroFramework.MetroTextBoxWeight.Regular;
-            this.metroTextBox1.Location = new System.Drawing.Point(62, 186);
+            this.metroTextBox1.Location = new System.Drawing.Point(62, 73);
             this.metroTextBox1.Multiline = false;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.Size = new System.Drawing.Size(151, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(211, 23);
             this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.StyleManager = null;
             this.metroTextBox1.TabIndex = 9;
@@ -135,7 +125,7 @@
             this.metroProgressBar1.Location = new System.Drawing.Point(62, 300);
             this.metroProgressBar1.Name = "metroProgressBar1";
             this.metroProgressBar1.ProgressBarStyle = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.metroProgressBar1.Size = new System.Drawing.Size(180, 23);
+            this.metroProgressBar1.Size = new System.Drawing.Size(559, 23);
             this.metroProgressBar1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroProgressBar1.StyleManager = null;
             this.metroProgressBar1.TabIndex = 10;
@@ -153,7 +143,7 @@
             this.metroLabel2.Location = new System.Drawing.Point(437, 32);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(122, 19);
-            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroLabel2.StyleManager = null;
             this.metroLabel2.TabIndex = 11;
             this.metroLabel2.Text = "Letra de la Cancion";
@@ -171,12 +161,11 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnDescargar);
             this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Descargas";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -187,7 +176,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnDescargar;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;

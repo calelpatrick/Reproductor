@@ -141,7 +141,6 @@ namespace Reproductor
             writer.WriteLine(salida);
             writer.Close();
             //limpiar la lista de autores
-
             MessageBox.Show("Ingresado Exitosamente!!");
 
         }
@@ -177,7 +176,7 @@ namespace Reproductor
         }
         private void letra()
         {
-            direccionLetra = "C:\\Users\\Patrick\\Documents\\Visual Studio 2015\\Projects\\Reproductor\\PORTADA\\" + i + ".txt";
+            direccionLetra = "C:\\Users\\Patrick\\Documents\\Visual Studio 2015\\Projects\\Reproductor\\LETRAS\\" + i + ".txt";
             FileStream stream = new FileStream(direccionLetra, FileMode.Append, FileAccess.Write);
             StreamWriter write = new StreamWriter(stream);
             write.WriteLine(textBox1.Text);
