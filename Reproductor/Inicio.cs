@@ -180,23 +180,46 @@ namespace Reproductor
 
         private void button3_Click(object sender, EventArgs e)// Botton Siguiente
         {
-            try
+            if (checkBox2.Checked)
             {
-                int filaActual = dataGridView1.CurrentRow.Index;
-                dataGridView1.CurrentCell = dataGridView1.Rows[filaActual + 1].Cells[0];
-                string ruta = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                leerLetra(dataGridView1.CurrentRow.Cells[4].Value.ToString());
-                WR.URL = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                WR.Ctlcontrols.play();
-                Image f = Image.FromFile(ruta);
-                pictureBox1.Image = f;
-                label2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                try
+                {
+                    int filaActual = dataGridView1.CurrentRow.Index;
+                    dataGridView1.CurrentCell = dataGridView1.Rows[CancionAleatorio()].Cells[0];
+                    string ruta = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    leerLetra(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                    WR.URL = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    WR.Ctlcontrols.play();
+                    Image f = Image.FromFile(ruta);
+                    pictureBox1.Image = f;
+                    label2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Esta es la ultima cancion de la lista.");
+
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Esta es la ultima cancion de la lista.");
-               // tmDuracionActual.Stop();
-            }
+                 try
+                {
+                    int filaActual = dataGridView1.CurrentRow.Index;
+                    dataGridView1.CurrentCell = dataGridView1.Rows[filaActual + 1].Cells[0];
+                    string ruta = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    leerLetra(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                    WR.URL = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    WR.Ctlcontrols.play();
+                    Image f = Image.FromFile(ruta);
+                    pictureBox1.Image = f;
+                    label2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                }
+                catch
+                {
+                    MessageBox.Show("Esta es la ultima cancion de la lista.");
+               
+                }
+           }
         }
 
         private void button2_Click(object sender, EventArgs e) //Botton anterior
@@ -394,18 +417,37 @@ namespace Reproductor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (termino==true)
+            if (checkBox2.Checked)
             {
-                WR.Ctlcontrols.stop();
-                dataGridView1.CurrentCell = dataGridView1.Rows[CancionAleatorio()].Cells[0];
-                string ruta = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                WR.URL = dataGridView1.Rows[CancionAleatorio()].Cells[2].Value.ToString();
-                WR.Ctlcontrols.play();
-                Image f = Image.FromFile(ruta);
-                pictureBox1.Image = f;
-                label2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                leerLetra(dataGridView1.CurrentRow.Cells[4].Value.ToString());
-                termino = false;
+                if (termino == true)
+                {
+                    WR.Ctlcontrols.stop();
+                    dataGridView1.CurrentCell = dataGridView1.Rows[CancionAleatorio()].Cells[0];
+                    string ruta = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    WR.URL = dataGridView1.Rows[CancionAleatorio()].Cells[2].Value.ToString();
+                    WR.Ctlcontrols.play();
+                    Image f = Image.FromFile(ruta);
+                    pictureBox1.Image = f;
+                    label2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    leerLetra(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                    termino = false;
+                }
+            }
+            else
+            {
+                if (termino==true)
+                 {
+                        int filaActual = dataGridView1.CurrentRow.Index;
+                        dataGridView1.CurrentCell = dataGridView1.Rows[filaActual + 1].Cells[0];
+                        string ruta = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                        leerLetra(dataGridView1.CurrentRow.Cells[4].Value.ToString());
+                        WR.URL = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                        WR.Ctlcontrols.play();
+                        Image f = Image.FromFile(ruta);
+                        pictureBox1.Image = f;
+                        label2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+           
+                }
             }
         }
     }

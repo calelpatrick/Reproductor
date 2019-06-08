@@ -268,10 +268,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Eliminar";
             // 
-            // cLReproduccionBindingSource
-            // 
-            this.cLReproduccionBindingSource.DataSource = typeof(Reproductor.CL_Reproduccion);
-            // 
             // Agregar_Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
