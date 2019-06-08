@@ -132,7 +132,14 @@ namespace Reproductor
             string direccion = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             string portada = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             string letra = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-           // string nombre = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            // string nombre = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            Agregar_Lista frm = new Agregar_Lista();
+            frm.codigo = codigo;
+            frm.nombre = nombre;
+            frm.direccion = direccion;
+            frm.portada = portada;
+            frm.letra = letra;
+            frm.ShowDialog();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)

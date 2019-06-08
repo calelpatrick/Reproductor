@@ -65,6 +65,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agregar Lista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar Lista.Designer.cs">
+      <DependentUpon>Agregar Lista.cs</DependentUpon>
+    </Compile>
     <Compile Include="CL_Biblioteca.cs" />
     <Compile Include="CL_Reproduccion.cs" />
     <Compile Include="Form1.cs">
@@ -87,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Agregar Lista.resx">
+      <DependentUpon>Agregar Lista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +115,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CL_Reproduccion.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

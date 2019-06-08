@@ -6,28 +6,13 @@ using System.Threading.Tasks;
 
 namespace Reproductor
 {
-   public class CL_Reproduccion
+    class CL_Reproduccion
     {
-        string codigo;
+       
         string nombre;
         string direccion;
 
-        
-
-        public string Codigo
-        {
-            get
-            {
-                return codigo;
-            }
-
-            set
-            {
-                codigo = value;
-            }
-        }
-
-        public string Nombre
+        public string Nombre1
         {
             get
             {
@@ -40,7 +25,7 @@ namespace Reproductor
             }
         }
 
-        public string Direccion
+        public string Direccion1
         {
             get
             {
