@@ -30,46 +30,38 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Agregar_Lista));
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cLReproduccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLReproduccionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.metroComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.metroComboBox1.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.metroComboBox1.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(29, 49);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
-            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroComboBox1.StyleManager = null;
-            this.metroComboBox1.TabIndex = 0;
-            this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             // 
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.CustomBackground = false;
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Medium;
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Light;
@@ -86,10 +78,10 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.comboBox1);
             this.metroTabPage1.Controls.Add(this.dataGridView1);
             this.metroTabPage1.Controls.Add(this.pictureBox1);
             this.metroTabPage1.Controls.Add(this.metroLabel1);
-            this.metroTabPage1.Controls.Add(this.metroComboBox1);
             this.metroTabPage1.CustomBackground = false;
             this.metroTabPage1.HorizontalScrollbar = false;
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
@@ -107,6 +99,24 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 40);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(2, 84);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(360, 251);
+            this.dataGridView1.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -139,7 +149,7 @@
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.button1);
+            this.metroTabPage2.Controls.Add(this.pictureBox2);
             this.metroTabPage2.Controls.Add(this.metroTextBox1);
             this.metroTabPage2.Controls.Add(this.metroLabel2);
             this.metroTabPage2.CustomBackground = false;
@@ -160,16 +170,6 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(235, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 90);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // metroTextBox1
             // 
             this.metroTextBox1.CustomBackground = false;
@@ -180,7 +180,7 @@
             this.metroTextBox1.Multiline = false;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.Size = new System.Drawing.Size(121, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(168, 23);
             this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.StyleManager = null;
             this.metroTextBox1.TabIndex = 3;
@@ -195,7 +195,7 @@
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Medium;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Light;
             this.metroLabel2.LabelMode = MetroFramework.Controls.MetroLabelMode.Default;
-            this.metroLabel2.Location = new System.Drawing.Point(14, 22);
+            this.metroLabel2.Location = new System.Drawing.Point(14, 19);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(121, 19);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Blue;
@@ -205,17 +205,72 @@
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroLabel2.UseStyleColors = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(188, 45);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(112, 111);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.Controls.Add(this.label1);
+            this.metroTabPage3.Controls.Add(this.pictureBox5);
+            this.metroTabPage3.Controls.Add(this.dataGridView2);
+            this.metroTabPage3.CustomBackground = false;
+            this.metroTabPage3.HorizontalScrollbar = false;
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.HorizontalScrollbarSize = 10;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(628, 338);
+            this.metroTabPage3.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTabPage3.StyleManager = null;
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "Eliminar Lista";
+            this.metroTabPage3.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTabPage3.VerticalScrollbar = false;
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.VerticalScrollbarSize = 10;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 32);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(348, 156);
+            this.dataGridView2.TabIndex = 2;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(357, 53);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(81, 67);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(357, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Eliminar";
+            // 
             // cLReproduccionBindingSource
             // 
             this.cLReproduccionBindingSource.DataSource = typeof(Reproductor.CL_Reproduccion);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(360, 251);
-            this.dataGridView1.TabIndex = 4;
             // 
             // Agregar_Lista
             // 
@@ -230,27 +285,35 @@
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.metroTabPage3.ResumeLayout(false);
+            this.metroTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLReproduccionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
-        private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.BindingSource cLReproduccionBindingSource;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private MetroFramework.Controls.MetroTabPage metroTabPage3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
