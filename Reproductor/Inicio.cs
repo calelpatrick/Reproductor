@@ -405,7 +405,6 @@ namespace Reproductor
                 // WR.URL = ();
                 // WR.Ctlcontrols.play();
             } 
-            
         }
 
         private int CancionAleatorio()
@@ -446,9 +445,13 @@ namespace Reproductor
                         Image f = Image.FromFile(ruta);
                         pictureBox1.Image = f;
                         label2.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-           
                 }
             }
+        }
+
+        private void trackMedia_Scroll(object sender, EventArgs e)
+        {
+            WR.Ctlcontrols.currentPosition = trackMedia.Value;
         }
     }
 }
